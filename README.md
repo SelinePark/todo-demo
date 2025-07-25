@@ -80,6 +80,7 @@ Username과 Password가 그대로 들어있는 URI를 평문으로 저장하는 
 - KMS의 ARN 메모
   - 검색창에 Key Management Service를 입력하여 나온 서비스를 클릭해주세요.
 <img width="959" height="379" alt="kms_key" src="https://github.com/user-attachments/assets/1376993b-37ff-4f03-aecd-4c95b95ba571" />
+
 좌측 상단의 AWS managed keys를 누르면 위 화면이 뜹니다. aws/ssm이라는 이름의 키가 있을 것입니다. 이를 클릭해서 환경변수와 같은 방식으로 ARN을 복사해 메모해 주세요.
 
 #### 4. 이제 AWS Elastic Beanstalk으로 돌아와, 환경변수 설정에서 Parameter Store를 선택한 후 환경변수의 이름과 ARN을 입력합니다.
