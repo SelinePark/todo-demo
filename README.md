@@ -91,8 +91,12 @@ Username과 Password가 그대로 들어있는 URI를 평문으로 저장하는 
 Parameter Store는 Beanstalk과는 별개의 공간에 환경변수를 따로 암호화해서 저장하는 개념이기 때문에, Beanstalk에서도 복호화된 환경변수를 꺼내 쓸 수 있도록 허락해야 하는데 지금 설정이 그렇게 되어있지 않기 때문입니다.
 
 #### 5. Role의 준비
-새 AWS 창을 열어서 IAM을 검색한 후 나온 결과를 클릭하여 AWS IAM 페이지에 들어갑니다.
+새 AWS 창을 열어서 IAM을 검색한 후 나온 결과를 클릭하여 AWS IAM 페이지에 들어갑니다. 우측 상단에서 Roles를 찾아 누르고, 많은 role들 중에서 aws-elasticbeanstalk-ec2-role를 찾아 눌러주세요.
+
+
 <img width="947" height="383" alt="ssm_role" src="https://github.com/user-attachments/assets/2dddb673-5477-4834-9872-e90f5cb6c46c" />
+
+
 [Add Permissions] > [Create inline policy]를 누릅니다.
 그 다음은 (화면에 많은 것이 있겠지만 전부 무시하고) JSON을 눌러, 에디터의 내용을 전부 지우고 아래 내용을 입력해 주세요.
 ```
