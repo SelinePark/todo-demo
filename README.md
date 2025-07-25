@@ -30,7 +30,7 @@ todolist-demo
 │   └── src
 └── README.md
 ```
-5. 🛠️ 설치 및 실행 방법
+### 5. 🛠️ 설치 및 실행 방법
 ```
 // 1. 저장소 클론
 git clone https://github.com/SelinePark/nodejs-study.git
