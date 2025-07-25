@@ -85,6 +85,8 @@ Username과 Password가 그대로 들어있는 URI를 평문으로 저장하는 
 
 #### 4. 이제 AWS Elastic Beanstalk으로 돌아와, 환경변수 설정에서 Parameter Store를 선택한 후 환경변수의 이름과 ARN을 입력합니다.
 <img width="1024" height="287" alt="beanstalk_add" src="https://github.com/user-attachments/assets/337ad5fe-8d71-4b6c-860b-f50bb12c6534" />
+
+(위의 Plain text란이 아닌, 아래의 Parameter Store란처럼 입력하셔야 합니다!)
 이미 설정이 끝난 저는 화면에 뜨지 않아 캡처할 수 없었지만, 위 순서대로 진행하면 값을 올바르게 입력해도 아래에 Role과 관련된 경고가 뜰 것입니다.
 Parameter Store는 Beanstalk과는 별개의 공간에 환경변수를 따로 암호화해서 저장하는 개념이기 때문에, Beanstalk에서도 복호화된 환경변수를 꺼내 쓸 수 있도록 허락해야 하는데 지금 설정이 그렇게 되어있지 않기 때문입니다.
 
