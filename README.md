@@ -113,3 +113,6 @@ Parameter Store는 Beanstalk과는 별개의 공간에 환경변수를 따로 �
 그 이외에 아무것도 건드리지 않고 Next 버튼으로 넘어가면 policy name을 지어달라는 항목이 나오는데 적당한 이름으로 지으시면 됩니다. (전 다른 policy들의 이름을 참고해 ```AWSElasticBeanstalkAccessToSecureStringParameter```라고 지었습니다.)
 
 이제 Create policy를 눌러 저장하면 끝입니다!
+
+- 출처
+  - https://aws.amazon.com/jp/blogs/dotnet/aws-elastic-beanstalk-now-integrates-with-aws-secrets-manager-and-systems-manager-parameter-store/
