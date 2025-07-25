@@ -33,7 +33,7 @@ todolist-demo
 ### 5. 🛠️ 설치 및 실행 방법
 ```
 // 1. 저장소 클론
-git clone https://github.com/SelinePark/nodejs-study.git
+git clone https://github.com/SelinePark/todo-demo.git
 
 // 2. 프론트엔드 설치 및 실행
 cd todo-frontend
