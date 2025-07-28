@@ -37,7 +37,7 @@ userController.loginWithEmail = async (req, res) => {
     }
     throw new Error("ID or password not correct");
   } catch (err) {
-    res.status(400).json({ status: "fail", err });
+    res.status(400).json({ status: "fail", message: err.message });
   }
 };
 
