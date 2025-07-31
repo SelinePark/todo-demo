@@ -5,17 +5,18 @@ const { MongoClient, ObjectId } = require("mongodb"); // ObjectId는 첫 시도 
 taskController.createTask = async (req, res) => {
   try {
     const { task, isComplete } = req.body;
-    const newTask = new Task({ task, isComplete });
+    const { userId } = req;
+    const newTask = new Task({ task, isComplete, author: userId });
     await newTask.save();
     res.status(200).json({ status: "ok", data: newTask });
   } catch (err) {
-    res.status(400).json({ status: "fail", error: err });
+    res.status(400).json({ status: "fail", message: err.message });
   }
 };
 
 taskController.getTask = async (req, res) => {
   try {
-    const taskList = await Task.find({}).select("-__v");
+    const taskList = await Task.find({}).populate("author").select("-__v");
     res.status(200).json({ status: "ok", data: taskList });
   } catch (err) {
     console.error(err);

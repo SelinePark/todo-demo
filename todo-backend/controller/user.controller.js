@@ -10,7 +10,9 @@ userController.createUser = async (req, res) => {
     const user = await User.findOne({ email });
 
     if (user) {
-      throw new Error("You have already signed up!");
+      return res
+        .status(400)
+        .json({ status: "error", message: "You have already signed up!" });
     }
 
     const salt = bcrypt.genSaltSync(saltRounds);
@@ -20,7 +22,7 @@ userController.createUser = async (req, res) => {
     await newUser.save();
     res.status(200).json({ status: "ok" });
   } catch (err) {
-    res.status(400).json({ status: "error" });
+    res.status(400).json({ status: "error", message: err.message });
   }
 };
 
@@ -41,4 +43,16 @@ userController.loginWithEmail = async (req, res) => {
   }
 };
 
+userController.getUser = async (req, res) => {
+  try {
+    const { userId } = req;
+    const user = await User.findById(userId);
+    if (!user) {
+      throw new Error("Cannot find user");
+    }
+    res.status(200).json({ status: "ok", user });
+  } catch (error) {
+    res.status(400).json({ status: "fail", message: error.message });
+  }
+};
 module.exports = userController;
